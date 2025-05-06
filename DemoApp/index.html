@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proje Tablonu</title>
+    <link rel="stylesheet" href="css/style.css">
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+    <main class="container mt-3">
+        <h3 class="p-4 text-center">Film & Dizi Listesi</h3>
+
+        <!-- Film ve Dizi Butonları -->
+        <div class="d-flex justify-content-center mb-3">
+            <button class="btn btn-primary me-2" id="toggle-film-btn">Film Ekle</button>
+            <button class="btn btn-info" id="toggle-dizi-btn">Dizi Ekle</button>
+        </div>
+
+        <!-- Film Ekleme Formu -->
+        <div id="film-form" class="d-none">
+            <h5 class="text-center mb-3 text-primary">Film Ekle</h5>
+            <!-- Input ogesi ek yeni flim eklemek hemde Daha once eklenen flimleri aramak icin Kullanilacaktir -->
+            <div class="d-flex w-75 mx-auto mt-3">
+                <input type="text" class="form-control" id="film-input" placeholder="Film adını girin">
+
+                <!-- Check Box -->
+                <div class="checkbox-wrapper-26 mx-3">
+                    <input type="checkbox" id="_checkbox-26">
+                    <label for="_checkbox-26">
+                      <div class="tick_mark"></div>
+                    </label>
+                </div> 
+                <!-- Puan Girişi -->
+                <input type="text" class="form-control w-25" id="puan-input" placeholder="puan" disabled>
+                <!-- Film Ekleme Butonu -->
+                <button class="btn btn-primary ms-2 mx-3" id="add-button"><i class="bi bi-plus-lg"></i></button>
+            </div>
+
+            <!-- Aciklama ekleme input -->
+            <div class="d-flex w-75 mx-auto mt-3">
+                <input type="text" class="form-control w-75 me-2" id="film-Acikla" placeholder="Aciklama Ekleyin" disabled>
+                <!-- Platfrom secmek -->
+                <select class="form-select w-25 platform-select" id="film-platform">
+                    <option value="">Platform Seçin</option>
+                </select>
+            </div>
+
+            
+            <!-- Platform Linki (sadece Exxen ve BluTV için) -->
+            <div class="d-flex w-75 mx-auto mt-3" id="platform-link-container">
+                <input  type="text" class="form-control w-100 me-2 " id="film-platform-link" style="display: none;" placeholder="Platform Linkini Girin" >
+            </div>
+            
+        </div>
+
+        <!-- Dizi Ekleme Formu -->
+        <div id="dizi-form" class="d-none">
+            <h5 class="text-center mb-3 text-info">Dizi Ekle</h5>
+            <div class="d-flex w-75 mx-auto mt-3">
+                <input type="text" class="form-control" id="dizi-input" placeholder="Dizi adını girin">
+
+                <!-- Check Box -->
+                <div class="checkbox-wrapper-26 mx-3">
+                    <input type="checkbox" id="_checkbox-dizi">
+                    <label for="_checkbox-dizi">
+                      <div class="tick_mark"></div>
+                    </label>
+                </div> 
+                <!-- Puan Girişi -->
+                <input type="text" class="form-control w-25" id="dizi-puan-input" placeholder="puan" disabled>
+                <!-- Dizi Ekleme Butonu -->
+                <button class="btn btn-info ms-2 mx-3" id="add-dizi-button"><i class="bi bi-plus-lg"></i></button>
+            </div>
+
+            <!-- Sezon ve Bölüm Bilgisi -->
+            <div class="d-flex w-75 mx-auto mt-3">
+                <input type="number" class="form-control me-2" id="sezon-input" placeholder="Sezon" min="1">
+                <input type="number" class="form-control" id="bolum-input" placeholder="Bölüm" min="1">
+            </div>
+
+            <!-- Aciklama ekleme input -->
+            <div class="d-flex w-75 mx-auto mt-3 ml-3">
+                <input type="text" class="form-control w-75 me-2" id="dizi-Acikla" placeholder="Aciklama Ekleyin" disabled>
+                <select class="form-select w-25 platform-select" id="dizi-platform">
+                  <option value="">Platform Seçin</option>
+                </select>
+            </div>  
+
+            
+            <!-- Platform Linki (sadece Exxen ve BluTV için) -->
+            <div class="d-flex w-100 mx-auto mt-3" id="platform-link-container" >
+                <input type="url" id="dizi-platform-link" class="form-control w-75 mx-auto mt-3" placeholder="Platform Linki" style="display: none;">
+            </div>
+            
+        </div>
+
+
+        <!-- Filtreleme ve Arama -->
+        <div class="d-flex justify-content-center mt-4 mb-3">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-secondary active" id="filter-all">Tümü</button>
+                <button type="button" class="btn btn-outline-secondary" id="filter-film">Filmler</button>
+                <button type="button" class="btn btn-outline-secondary" id="filter-dizi">Diziler</button>
+            </div>
+            <input type="text" class="form-control w-50 ms-3" id="search-input" placeholder="Ara...">
+        </div>
+
+        <!-- Liste -->
+        <ul id="content-list" class="list-group list-group-flush">
+            
+        </ul>
+
+    </main>
+
+    
+    <script type="module" src="js/app.js"></script>
+    <!-- CUSTOM JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+/* Genel stiller */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5 {
+  color: #333;
+}
+
+/* Form animasyonları */
+#film-form, #dizi-form {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#film-form {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+#dizi-form {
+  background-color: rgba(13, 202, 240, 0.05);
+}
+
+/* Liste stili */
+.list-group-item {
+  transition: all 0.2s ease;
+  margin-bottom: 5px;
+  border-left: 5px solid transparent;
+}
+
+.list-group-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Film ve dizi türüne göre sol kenar rengi */
+.list-group-item[data-type="film"] {
+  border-left-color: #0d6efd; /* primary renk */
+}
+
+.list-group-item[data-type="dizi"] {
+  border-left-color: #0dcaf0; /* info renk */
+}
+
+/* Badge'lar için ekstra stil */
+.badge {
+  margin-right: 5px;
+}
+
+/* Butonlar için geçiş efektleri */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Filtreleme butonları */
+.btn-group .btn {
+  border-radius: 20px;
+  padding: 5px 15px;
+}
+
+/* Arama kutusu */
+#search-input {
+  border-radius: 20px;
+  padding-left: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #0d6efd;
+}
+
+/* Checkbox özel stil */
+.checkbox-wrapper-26 * {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+.checkbox-wrapper-26 input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-wrapper-26 label {
+  --size: 32px;
+  --shadow: calc(var(--size) * .07) calc(var(--size) * .1);
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size);
+  height: var(--size);
+  margin: 0 auto;
+  background-color: #f72414;
+  border-radius: 50%;
+  box-shadow: 0 var(--shadow) #ffbeb8;
+  cursor: pointer;
+  transition: all .3s ease;
+  transform: translateZ(0);
+  overflow: hidden;
+}
+
+.checkbox-wrapper-26 label:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff5c54;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all .3s ease;
+  z-index: 1;
+}
+
+.checkbox-wrapper-26 label:hover:before {
+  transform: scale(.95);
+}
+
+.checkbox-wrapper-26 label:active {
+  transform: scale(.92) translateY(5px);
+  box-shadow: 0 var(--shadow) #ff9d95;
+}
+
+.checkbox-wrapper-26 input[type="checkbox"]:checked + label {
+  background-color: #39ca55;
+  box-shadow: 0 var(--shadow) #b5efc4;
+}
+
+.checkbox-wrapper-26 input[type="checkbox"]:checked + label:before {
+  background-color: #54da6f;
+}
+
+.checkbox-wrapper-26 input[type="checkbox"]:checked + label:active {
+  box-shadow: 0 var(--shadow) #8cf0a7;
+}
+
+.checkbox-wrapper-26 .tick_mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 30%;
+  transform: translate(-50%, -65%) rotate(-45deg) scale(0);
+  border: 3px solid #fff;
+  border-top: none;
+  border-right: none;
+  z-index: 2;
+  transition: all .3s ease;
+}
+
+.checkbox-wrapper-26 input[type="checkbox"]:checked + label .tick_mark {
+  transform: translate(-50%, -70%) rotate(-45deg) scale(1);
+}
+
+/* Açıklama metni stillemesi */
+.description-text {
+  font-size: 0.9rem;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  border-left: 3px solid #6c757d;
+  transition: all 0.3s ease;
+}
+
+/* Hover efekti */
+.toggle-description:hover {
+  background-color: rgba(0, 0, 0, 0.01);
+  border-radius: 5px;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .list-group-item {
+    padding: 10px;
+  }
+  
+  .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Form elemanları hizalama */
+.d-flex {
+  align-items: center;
+}
+
+.checkbox-wrapper-26 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Puan girişi stillemesi */
+input[type="text"]#puan-input,
+input[type="text"]#dizi-puan-input {
+  text-align: center;
+  font-weight: bold;
+  color: #fd7e14;
+}
+
+/* Sezon ve bölüm girişleri */
+input[type="number"]#sezon-input,
+input[type="number"]#bolum-input {
+  text-align: center;
+}
+
+/* Input focus stillemesi */
+.form-control:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
