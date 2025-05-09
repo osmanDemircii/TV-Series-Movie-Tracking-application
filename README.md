@@ -57,14 +57,3 @@ JavaScript (ES6+ Modüller)
 LocalStorage API
 
 📁 Dosya Yapısı:
-`
-DemoApp/
-├── css/
-│   └── style.css
-├── js/
-│   ├── app.js
-│   ├── storage.js
-│   ├── ui.js
-│   └── dataset.js
-├── index.html
-└── README.md`
